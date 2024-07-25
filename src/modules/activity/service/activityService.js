@@ -61,7 +61,12 @@ class ActivityService {
     if (!activity) {
       throw new Error(`Activity with id ${id} not found in database`);
     }
-    await this.activityRepository.update(id, { title, subtitle, pending });
+    const updatedActivity = {};
+    if (title) updatedActivity.title = title;
+    if (subtitle) updatedActivity.subtitle = subtitle;
+    if (pending !== undefined) updatedActivity.pending = pending;
+
+    await this.activityRepository.update(id, updatedActivity);
     return { statusCode: 200, message: 'Activity updated successfully' };
   }
 

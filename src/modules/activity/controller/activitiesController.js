@@ -70,9 +70,9 @@ router.post('/save', [
  */
 router.patch('/update', [
   body('id').isInt(),
-  body('title').isString(),
-  body('subtitle').isString(),
-  body('pending').isBoolean(),
+  body('title').optional().isString(),
+  body('subtitle').optional().isString(),
+  body('pending').optional().isBoolean(),
   validate
 ], async (req, res) => {
   const { id, title, subtitle, pending } = req.body;
