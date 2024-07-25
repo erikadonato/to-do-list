@@ -23,7 +23,7 @@ class ActivityService {
   async searchActivityById(id) {
     const activity = await this.activityRepository.findOne(id);
     if (!activity) {
-      throw new Error(`Activity with id ${id} not found`);
+      throw new Error(`Activity with id ${id} not found in database`);
     }
     return {
       statusCode: 200,
@@ -79,7 +79,7 @@ class ActivityService {
   async deleteActivity(id) {
     const activity = await this.searchActivityById(id);
     if (!activity) {
-      throw new Error(`Activity with id ${id} not found`);
+      throw new Error(`Activity with id ${id} not found in database`);
     }
     await this.activityRepository.remove(activity);
     return { statusCode: 200, message: 'Activity deleted successfully' };
