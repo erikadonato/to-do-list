@@ -72,3 +72,15 @@ O servidor estará rodando em http://localhost:3000.
 - Para gerar a documentação JSDoc:
     ```bash
    $ yarn docs
+
+
+## Docker
+
+- Para construir a imagem (nome sugestivo):
+    ```bash
+    $ docker build -t to-do-list .
+
+- Executar o Container:
+    ```bash
+    $ docker run -p 3000:3000 to-do-list
+
