@@ -6,7 +6,7 @@ Uma API simples para gerenciar uma lista de tarefas usando Node.js, Express, Typ
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/to-do-list-api.git
+   git clone https://github.com/erikadonato/to-do-list
    cd to-do-list-api
 
 2. Instale as dependências
